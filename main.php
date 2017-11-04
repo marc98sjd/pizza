@@ -11,12 +11,12 @@
 		?>		
 				<h2>Introdueix els ingredients de la pizza:</h2>
 				<FORM method="POST" action="main.php">
-					<input type="checkbox" name="ingredientes[]" value="Massa">Massa</input>
-					<input type="checkbox" name="ingredientes[]" value="Orenga">Orenga</input>
-					<input type="checkbox" name="ingredientes[]" value="Pernil dolç">Pernil dolç</input>
-					<input type="checkbox" name="ingredientes[]" value="Baco">Baco</input>
-					<input type="checkbox" name="ingredientes[]" value="Tomaquet">Tomaquet</input>
-					<input type="checkbox" name="ingredientes[]" value="Formatge">Formatge</input>
+					<input type="checkbox" name="ingredientes[]" value="Massa">Massa</input><br>
+					<input type="checkbox" name="ingredientes[]" value="Orenga">Orenga</input><br>
+					<input type="checkbox" name="ingredientes[]" value="Pernil dolç">Pernil dolç</input><br>
+					<input type="checkbox" name="ingredientes[]" value="Baco">Baco</input><br>
+					<input type="checkbox" name="ingredientes[]" value="Tomaquet">Tomaquet</input><br>
+					<input type="checkbox" name="ingredientes[]" value="Formatge">Formatge</input><br><br>
 					<INPUT type="submit" name="comprar" value="comprar"/>
 				</FORM>
 				<p><strong>*Nota: la massa i la orenga son obligatories.</strong></p>
@@ -64,16 +64,16 @@
 					$ingredients_notchecked = "";
 					for ($i=0; $i < count($ingredients_notcheckedd) ; $i++) {
 						$valor = $ingredients_notcheckedd[$i];
-						$ingredients_notchecked = $ingredients_notchecked."<input type='checkbox' name='ingredientes2[]' value='$valor'>$valor</input>";
+						$ingredients_notchecked = $ingredients_notchecked."<input type='checkbox' name='ingredientes2[]' value='$valor'>$valor</input><br>";
 					}
 					for ($i=0; $i < count($ingredientes) ; $i++) {
 						$valor = $ingredientes[$i];
-						$ingredients_checked = $ingredients_checked."<input type='checkbox' name='ingredientes2[]' value='$valor' checked>$valor</input>";
+						$ingredients_checked = $ingredients_checked."<input type='checkbox' name='ingredientes2[]' value='$valor' checked>$valor</input><br>";
 					}
 					$todos = $ingredients_checked.$ingredients_notchecked;
 					$formulari = "	<form method='post' action='main.php'>
             							$todos
-       									<input type='submit' name='todo' value='comprar'>
+       									<br><input type='submit' name='todo' value='comprar'>
     								</form>";
     				echo $formulari;
 				}
