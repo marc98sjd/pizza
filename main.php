@@ -33,6 +33,13 @@
 					}
 				}else{
 					$ingredientes = $_POST['ingredientes2'];
+					$ingredientes = array_filter($ingredientes);
+					if (empty($ingredientes)){
+						$_POST = array();
+						header("Location: main.php");
+					}else{
+						$ingredientes = $_POST['ingredientes2'];
+					}
 				}
 				if (!in_array('Massa', $ingredientes) || !in_array('Orenga', $ingredientes)){
 					echo "La massa i l'orenga son obligatoris, s'afegirà automàticament l'ingredient mancant.";
