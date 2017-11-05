@@ -10,7 +10,7 @@
 			if (!isset($_POST['comprar']) && !isset($_POST['todo'])){		
 		?>		
 				<h2>Introdueix els ingredients de la pizza:</h2>
-				<FORM method="POST" action="main.php">
+				<FORM method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
 					<input type="checkbox" name="ingredientes[]" value="Massa">Massa</input><br>
 					<input type="checkbox" name="ingredientes[]" value="Orenga">Orenga</input><br>
 					<input type="checkbox" name="ingredientes[]" value="Pernil dolç">Pernil dolç</input><br>
